@@ -76,14 +76,14 @@ def add_page(request):
 def random_page(request):
     title = random.choice(util.list_entries())
     return HttpResponseRedirect("wiki/" + title)
-def edit_page(request, title):
-    return render(request, "encyclopedia/edit_page.html", {"name":title, "form2":Edit(util.get_entry(title)), "form":Search_Encyclopedia()})
-def edited_page(request, name):
-    if request.method == "POST":
-        form = Edit(request.POST)
-        if form.is_valid():
-            res = form.cleaned_data["text_area"]
-            util.save_entry(name, res)
-            return HttpResponseRedirect("wiki/" + name)
-        # else:
-        #     return HttpResponseRedirect(reverse("edit", kwargs={"name": name}))
+# def edit_page(request, title):
+#     return render(request, "encyclopedia/edit_page.html", {"name":title, "form2":Edit(util.get_entry(title)), "form":Search_Encyclopedia()})
+# def edited_page(request, name):
+#     if request.method == "POST":
+#         form = Edit(request.POST)
+#         if form.is_valid():
+#             res = form.cleaned_data["text_area"]
+#             util.save_entry(name, res)
+#             return HttpResponseRedirect("wiki/" + name)
+#         else:
+#             return HttpResponseRedirect(reverse("edit", kwargs={"name": name}))
