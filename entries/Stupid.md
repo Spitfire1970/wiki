@@ -1,6 +1,8 @@
 #Stupid
 
-Includes
+No lmao
 
-*smol brain
-*monke
+List:
+
+- smol brain
+- [raghav](/wiki/raghav goyal)
