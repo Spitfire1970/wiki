@@ -84,6 +84,6 @@ def edited_page(request, name):
         if form.is_valid():
             res = form.cleaned_data["text_area"]
             util.save_entry(name, res)
-            return HttpResponseRedirect(reverse("show_entry", kwargs={"name": name}))
+            return HttpResponseRedirect(reverse("show_entry", args=(name,)))
         else:
-            return HttpResponseRedirect(reverse("edit", kwargs={"name": name}))
+            return HttpResponseRedirect(reverse("edit_page", kwargs={"name": name}))
